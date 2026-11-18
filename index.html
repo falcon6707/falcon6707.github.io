@@ -1,0 +1,1090 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>传送门入口最新发布-聚合导航与更新说明</title>
+<meta name="description" content="传送门入口最新发布聚合页，按主题整理分类入口、更新记录与使用说明，含精选站点推荐、体验指南与常见问题解答，方便按需求快速定位合适入口。">
+<meta name="keywords" content="传送门入口最新发布">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231f3a5f'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%23e8b04b' stroke-width='2.4'/%3E%3Cpath d='M10 16h12M16 10v12' stroke='%23e8b04b' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1c2333;
+  --ink-2:#3d4658;
+  --muted:#6b7486;
+  --line:#dde2ea;
+  --bg:#f5f7fa;
+  --paper:#ffffff;
+  --brand:#1f3a5f;
+  --brand-2:#2d5486;
+  --accent:#b8860b;
+  --accent-soft:#fdf6e3;
+  --chip:#eef2f8;
+  --ok:#2f6b4f;
+  --warn:#8a5a12;
+  --radius:10px;
+  --radius-s:6px;
+  --shadow:0 1px 2px rgba(28,35,51,.06),0 6px 18px rgba(28,35,51,.06);
+  --fs-h1:clamp(1.9rem,4.4vw,2.9rem);
+  --fs-h2:clamp(1.25rem,2.4vw,1.6rem);
+  --fs-h3:1.06rem;
+  --gap:clamp(14px,2.4vw,26px);
+  --maxw:1180px;
+  --anchor-offset:104px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--anchor-offset)}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;display:block}
+a{color:var(--brand-2);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{line-height:1.35;margin:0 0 .6em}
+p{margin:0 0 1em}
+ul,ol{margin:0 0 1em;padding-left:1.2em}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+/* ---------- 吸顶部分 ---------- */
+.sticky-top{position:sticky;top:0;z-index:60}
+.notice{
+  background:var(--brand);
+  color:#eaf0f8;
+  font-size:.86rem;
+  letter-spacing:.02em;
+}
+.notice-inner{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:6px clamp(12px,3vw,24px);
+  display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;
+}
+.notice b{color:#ffd77a;font-weight:600}
+.notice a{color:#ffd77a}
+.site-header{
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:10px clamp(12px,3vw,24px);
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none!important;color:var(--ink)}
+.brand-mark{flex:0 0 auto;width:38px;height:38px}
+.brand-text{display:flex;flex-direction:column;line-height:1.2}
+.brand-text strong{font-size:1.06rem;letter-spacing:.04em;color:var(--brand)}
+.brand-text span{font-size:.72rem;color:var(--muted);letter-spacing:.14em}
+.main-nav{margin-left:auto}
+.main-nav ul{list-style:none;display:flex;gap:4px;margin:0;padding:0;flex-wrap:wrap}
+.main-nav a{
+  display:inline-block;padding:6px 11px;border-radius:999px;
+  font-size:.9rem;color:var(--ink-2);
+}
+.main-nav a:hover,.main-nav a.active{background:var(--chip);color:var(--brand);text-decoration:none}
+.header-tools{display:flex;align-items:center;gap:8px}
+.search-box{position:relative}
+.search-box input{
+  width:170px;padding:7px 11px;border:1px solid var(--line);
+  border-radius:999px;font-size:.86rem;background:#fbfcfe;color:var(--ink);
+}
+.search-box input:focus{border-color:var(--brand-2);outline:none;background:#fff}
+.search-feedback{
+  position:absolute;top:calc(100% + 6px);left:0;width:260px;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-s);
+  box-shadow:var(--shadow);font-size:.84rem;padding:8px 10px;display:none;z-index:80;
+}
+.search-feedback.show{display:block}
+.search-feedback strong{color:var(--brand)}
+.menu-btn{
+  display:none;align-items:center;gap:6px;border:1px solid var(--line);
+  background:#fff;color:var(--ink);padding:6px 11px;border-radius:999px;
+  font-size:.86rem;cursor:pointer;
+}
+.menu-btn svg{width:16px;height:16px}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  background:linear-gradient(160deg,#1f3a5f 0%,#24446e 46%,#2c5588 100%);
+  color:#eef3fa;
+  position:relative;overflow:hidden;
+}
+.hero-inner{
+  max-width:var(--maxw);margin:0 auto;
+  padding:clamp(30px,5vw,56px) clamp(12px,3vw,24px);
+  display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+  gap:var(--gap);align-items:center;position:relative;z-index:2;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.78rem;letter-spacing:.18em;color:#ffd77a;
+  border:1px solid rgba(255,215,122,.45);border-radius:999px;
+  padding:3px 12px;margin-bottom:14px;
+}
+.hero h1{
+  font-size:var(--fs-h1);color:#fff;letter-spacing:.02em;margin-bottom:16px;
+}
+.hero-desc{color:#d3deee;max-width:34em;font-size:1rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.btn{
+  display:inline-block;padding:9px 20px;border-radius:999px;
+  font-size:.92rem;border:1px solid transparent;cursor:pointer;
+  transition:transform .16s ease,background .16s ease;
+}
+.btn:hover{transform:translateY(-2px);text-decoration:none}
+.btn-primary{background:#e8b04b;color:#26221a;font-weight:600}
+.btn-primary:hover{background:#f0c169}
+.btn-ghost{border-color:rgba(255,255,255,.5);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.hero-stats{
+  display:flex;flex-wrap:wrap;gap:22px;margin-top:26px;
+  padding-top:18px;border-top:1px solid rgba(255,255,255,.18);
+}
+.hero-stats div{min-width:78px}
+.hero-stats b{display:block;font-size:1.32rem;color:#ffd77a;font-weight:700;line-height:1.2}
+.hero-stats small{font-size:.76rem;color:#b9c9df;letter-spacing:.06em}
+.hero-art{position:relative;min-height:250px}
+.hero-art svg{width:100%;height:auto;max-width:420px;margin-left:auto}
+.hero-art::before{
+  content:"";position:absolute;inset:auto 0 0 auto;width:66%;height:66%;
+  background:radial-gradient(circle at 70% 70%,rgba(232,176,75,.28),transparent 70%);
+  pointer-events:none;
+}
+
+/* ---------- 布局 ---------- */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(12px,3vw,24px)}
+.layout{
+  display:grid;grid-template-columns:minmax(0,1fr) 300px;
+  gap:var(--gap);align-items:start;padding:var(--gap) 0 48px;
+}
+.main-col{min-width:0}
+.side-col{min-width:0;display:flex;flex-direction:column;gap:var(--gap)}
+section.block{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(16px,3vw,26px);margin-bottom:var(--gap);
+}
+.block-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.block-head h2{font-size:var(--fs-h2);margin:0;color:var(--brand)}
+.block-head .hint{font-size:.8rem;color:var(--muted);letter-spacing:.04em}
+.lede{color:var(--ink-2);font-size:.95rem}
+.mini-meta{font-size:.78rem;color:var(--muted);letter-spacing:.03em}
+
+/* ---------- 通用组件 ---------- */
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tag{
+  display:inline-block;padding:4px 11px;border-radius:999px;
+  background:var(--chip);color:var(--brand-2);font-size:.82rem;
+  border:1px solid transparent;transition:background .15s ease,border-color .15s ease;
+}
+.tag:hover{background:#e2eaf5;border-color:#c9d7e9;text-decoration:none}
+
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.card{
+  border:1px solid var(--line);border-radius:var(--radius-s);overflow:hidden;
+  background:#fff;display:flex;flex-direction:column;
+  transition:transform .16s ease,box-shadow .16s ease;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.card-media{aspect-ratio:16/9;overflow:hidden;background:#e9eef5}
+.card-media img{width:100%;height:100%;object-fit:cover}
+.card-body{padding:12px 14px 14px;flex:1;display:flex;flex-direction:column}
+.card-body h3{font-size:1rem;margin-bottom:6px}
+.card-body p{font-size:.87rem;color:var(--ink-2);margin-bottom:8px}
+.card-foot{margin-top:auto;font-size:.76rem;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
+
+.list-compact{list-style:none;margin:0;padding:0}
+.list-compact li{
+  display:flex;gap:12px;align-items:flex-start;
+  padding:10px 0;border-bottom:1px dashed var(--line);
+}
+.list-compact li:last-child{border-bottom:none}
+.list-compact time{flex:0 0 68px;font-size:.78rem;color:var(--muted);padding-top:2px}
+.list-compact .li-title{font-weight:600;color:var(--ink)}
+.list-compact .li-desc{font-size:.85rem;color:var(--ink-2);margin:2px 0 0}
+
+.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.quote-card{
+  background:var(--accent-soft);border-left:4px solid var(--accent);
+  border-radius:0 var(--radius-s) var(--radius-s) 0;padding:14px 16px;
+}
+.quote-card p{font-size:.92rem;margin-bottom:6px}
+.quote-card cite{font-size:.78rem;color:var(--muted);font-style:normal}
+
+.steps{list-style:none;counter-reset:step;margin:0;padding:0}
+.steps li{
+  counter-increment:step;position:relative;padding:0 0 16px 46px;
+}
+.steps li::before{
+  content:counter(step);position:absolute;left:0;top:0;
+  width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;
+  display:grid;place-items:center;font-size:.86rem;font-weight:700;
+}
+.steps li::after{
+  content:"";position:absolute;left:15px;top:32px;bottom:0;width:1px;background:var(--line);
+}
+.steps li:last-child::after{display:none}
+.steps h3{font-size:.98rem;margin-bottom:4px}
+.steps p{font-size:.87rem;color:var(--ink-2);margin:0}
+
+.compare{width:100%;border-collapse:collapse;font-size:.87rem}
+.compare th,.compare td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+.compare thead th{background:#eef2f8;color:var(--brand);font-weight:600;white-space:nowrap}
+.compare tbody th{background:#fafbfd;font-weight:600;white-space:nowrap}
+
+details.faq{
+  border:1px solid var(--line);border-radius:var(--radius-s);
+  padding:0;margin-bottom:10px;background:#fff;overflow:hidden;
+}
+details.faq summary{
+  cursor:pointer;padding:12px 40px 12px 14px;font-weight:600;font-size:.94rem;
+  list-style:none;position:relative;color:var(--ink);
+}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{
+  content:"+";position:absolute;right:14px;top:50%;transform:translateY(-50%);
+  color:var(--brand-2);font-weight:700;
+}
+details.faq[open] summary::after{content:"－"}
+details.faq summary:hover{background:#f8fafd}
+details.faq .faq-body{padding:0 14px 14px;font-size:.89rem;color:var(--ink-2)}
+details.faq .faq-body p:last-child{margin-bottom:0}
+
+.review{border:1px solid var(--line);border-radius:var(--radius-s);padding:13px 15px;background:#fff}
+.review + .review{margin-top:10px}
+.review-head{display:flex;justify-content:space-between;gap:10px;font-size:.8rem;color:var(--muted);margin-bottom:6px}
+.review-head b{color:var(--ink);font-size:.86rem}
+.review p{font-size:.89rem;margin:0;color:var(--ink-2)}
+
+.timeline{list-style:none;margin:0;padding:0 0 0 20px;border-left:2px solid #e3e9f2}
+.timeline li{position:relative;padding:0 0 16px 16px}
+.timeline li::before{
+  content:"";position:absolute;left:-25px;top:7px;width:10px;height:10px;
+  border-radius:50%;background:#fff;border:2px solid var(--brand-2);
+}
+.timeline time{font-size:.78rem;color:var(--accent);font-weight:600;letter-spacing:.03em}
+.timeline h3{font-size:.95rem;margin:2px 0 3px}
+.timeline p{font-size:.85rem;color:var(--ink-2);margin:0}
+
+.credit{display:flex;flex-direction:column;gap:4px;font-size:.86rem;color:var(--ink-2)}
+.credit .stars{color:var(--accent);letter-spacing:.1em;font-size:.82rem}
+
+/* 深度解析 */
+.deep h2{color:var(--brand)}
+.deep h3{font-size:var(--fs-h3);color:var(--brand-2);margin-top:1.4em}
+.deep p{font-size:.95rem}
+.deep .verdict{
+  background:#f4f8f5;border:1px solid #cfe3d7;border-radius:var(--radius-s);
+  padding:14px 16px;margin:16px 0;
+}
+.deep .verdict b{color:var(--ok)}
+.deep ul li{margin-bottom:.5em;font-size:.93rem}
+.callout-inline{
+  display:block;background:#fbf6ea;border:1px dashed #e0c88a;border-radius:var(--radius-s);
+  padding:10px 13px;font-size:.87rem;color:var(--warn);margin:12px 0;
+}
+
+/* 侧栏 */
+.side-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 16px 18px;
+}
+.side-card h2{font-size:1rem;color:var(--brand);margin-bottom:10px;letter-spacing:.02em}
+.side-nav{list-style:none;margin:0;padding:0;font-size:.88rem}
+.side-nav li{margin-bottom:2px}
+.side-nav a{
+  display:block;padding:6px 10px;border-radius:var(--radius-s);
+  color:var(--ink-2);border-left:2px solid transparent;
+}
+.side-nav a:hover{background:#f3f6fb;text-decoration:none}
+.side-nav a.active{background:#eef2f8;color:var(--brand);font-weight:600;border-left-color:var(--brand-2)}
+.side-list{list-style:none;margin:0;padding:0;font-size:.86rem}
+.side-list li{padding:7px 0;border-bottom:1px dashed var(--line)}
+.side-list li:last-child{border-bottom:none}
+.side-list a{color:var(--ink-2)}
+.side-list a:hover{color:var(--brand-2)}
+.side-list small{display:block;color:var(--muted);font-size:.75rem}
+
+/* 页尾 */
+.site-footer{
+  background:#182a44;color:#c3cfdf;margin-top:10px;font-size:.88rem;
+}
+.footer-inner{
+  max-width:var(--maxw);margin:0 auto;padding:34px clamp(12px,3vw,24px) 22px;
+  display:grid;grid-template-columns:1.3fr 2fr;gap:var(--gap);
+}
+.footer-brand .brand-text strong{color:#fff}
+.footer-brand .brand-text span{color:#8ea3bd}
+.footer-brand p{margin-top:12px;color:#a7b8cd;font-size:.86rem;max-width:26em}
+.footer-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:16px}
+.footer-cols h3{font-size:.86rem;color:#ffd77a;letter-spacing:.08em;margin-bottom:8px;font-weight:600}
+.footer-cols ul{list-style:none;margin:0;padding:0}
+.footer-cols li{margin-bottom:5px}
+.footer-cols a{color:#b9c8da;font-size:.84rem}
+.footer-cols a:hover{color:#fff}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.12);
+  padding:14px clamp(12px,3vw,24px);
+  max-width:var(--maxw);margin:0 auto;
+  display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between;
+  font-size:.78rem;color:#8ea3bd;
+}
+
+/* 回到顶部 */
+.to-top{
+  position:fixed;right:16px;bottom:18px;z-index:70;
+  width:42px;height:42px;border-radius:50%;border:1px solid var(--line);
+  background:#fff;color:var(--brand);box-shadow:var(--shadow);cursor:pointer;
+  display:grid;place-items:center;opacity:0;pointer-events:none;
+  transition:opacity .2s ease,transform .2s ease;transform:translateY(8px);
+}
+.to-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.to-top:hover{background:#f2f6fb}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr}
+  .side-col{order:2}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-art{min-height:0;order:-1}
+  .hero-art svg{max-width:300px;margin:0 auto}
+  .footer-inner{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .menu-btn{display:inline-flex}
+  .main-nav{
+    margin-left:0;width:100%;order:5;display:none;
+    border-top:1px solid var(--line);padding-top:8px;
+  }
+  .main-nav.open{display:block}
+  .main-nav ul{flex-direction:column;gap:0}
+  .main-nav a{display:block;border-radius:var(--radius-s);padding:9px 10px}
+  .header-tools{margin-left:auto}
+  .search-box input{width:132px}
+  .search-feedback{width:min(260px,80vw);right:0;left:auto}
+  .split{grid-template-columns:1fr}
+  .list-compact li{flex-wrap:wrap}
+  .list-compact time{flex:0 0 auto;width:100%}
+  .compare{font-size:.82rem}
+  .compare th,.compare td{padding:7px 8px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .card:hover,.btn:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-top">
+  <div class="notice">
+    <div class="notice-inner">
+      <span><b>11月8日更新</b>：三处分类节点新增条目，回收两条失效地址，目录同步至 11月8日版本。</span>
+      <a href="/#latest">查看更新记录</a>
+      <a href="/#faq">校验方法</a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/#top" aria-label="返回首页顶部">
+        <svg class="brand-mark" viewBox="0 0 40 40" role="img" aria-label="传送门入口最新发布标识">
+          <rect width="40" height="40" rx="10" fill="#1f3a5f"></rect>
+          <circle cx="20" cy="20" r="11" fill="none" stroke="#e8b04b" stroke-width="2.6"></circle>
+          <path d="M11 20h18M20 11v18" stroke="#e8b04b" stroke-width="2.2" stroke-linecap="round"></path>
+          <circle cx="20" cy="20" r="3" fill="#e8b04b"></circle>
+        </svg>
+        <span class="brand-text">
+          <strong>传送门入口最新发布</strong>
+          <span>导航 · 归档 · 校验</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="主题频道导航">
+        <ul>
+          <li><a href="/#overview">领域概览</a></li>
+          <li><a href="/#picks">精选推荐</a></li>
+          <li><a href="/#latest">最新更新</a></li>
+          <li><a href="/#channels">分类入口</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <div class="search-box">
+          <label for="siteSearch" class="visually-hidden" style="position:absolute;left:-9999px">站内查找条目</label>
+          <input id="siteSearch" type="search" placeholder="查找条目，如：镜像站" autocomplete="off">
+          <div class="search-feedback" id="searchFeedback" role="status" aria-live="polite"></div>
+        </div>
+        <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">
+          <svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h14M3 10h14M3 15h14"/></svg>
+          菜单
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero" aria-label="首屏介绍">
+    <div class="hero-inner">
+      <div>
+        <span class="hero-tag">更新至 2026-11-08</span>
+        <h1>传送门入口最新发布</h1>
+        <p class="hero-desc">按主题归档的入口目录，记录每个节点的上线日期、可用状态与校验方式。清单以周为单位校对，失效条目移入回收区并留痕。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/#latest">看本周更新</a>
+          <a class="btn btn-ghost" href="/#channels">按分类找入口</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>126</b><small>在列条目</small></div>
+          <div><b>9</b><small>主题分类</small></div>
+          <div><b>11-08</b><small>最近校对日</small></div>
+          <div><b>7天</b><small>单条复核周期</small></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 320" role="presentation">
+          <defs>
+            <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#e8b04b" stop-opacity=".9"/>
+              <stop offset="1" stop-color="#e8b04b" stop-opacity=".25"/>
+            </linearGradient>
+          </defs>
+          <g fill="none" stroke="url(#ringGrad)" stroke-width="2">
+            <ellipse cx="210" cy="160" rx="150" ry="66"/>
+            <ellipse cx="210" cy="160" rx="112" ry="112" opacity=".65"/>
+            <ellipse cx="210" cy="160" rx="66" ry="150" opacity=".45" transform="rotate(24 210 160)"/>
+          </g>
+          <g fill="#dbe6f5">
+            <circle cx="60" cy="160" r="5"/>
+            <circle cx="210" cy="48" r="5"/>
+            <circle cx="360" cy="160" r="5"/>
+            <circle cx="210" cy="272" r="5"/>
+          </g>
+          <rect x="176" y="126" width="68" height="68" rx="14" fill="#12233b" stroke="#e8b04b" stroke-width="2.4"/>
+          <path d="M192 160h36M210 142v36" stroke="#e8b04b" stroke-width="2.6" stroke-linecap="round"/>
+          <g fill="#8fb0d6" font-size="11" font-family="PingFang SC,Microsoft YaHei,sans-serif">
+            <text x="30" y="310">节点索引</text>
+            <text x="312" y="34">校对于 11-08</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="layout">
+
+      <!-- 主列 -->
+      <div class="main-col">
+
+        <!-- 1 领域概览 -->
+        <section class="block" id="overview">
+          <div class="block-head">
+            <h2>入口聚合的基本规则</h2>
+            <span class="hint">概念 · 类型 · 判断</span>
+          </div>
+          <p>“入口”在这类目录里指一处可访问的起始页面，通常包含站点导航、资源索引或跳转说明。它们分三种常见类型：索引型（只列目的地）、镜像型（内容与主站一致、域名不同）、说明型（提供规则与使用条件）。三者的失效判定标准不一样，索引型看外链是否可达，镜像型看内容是否同步，说明型看条款是否有更新日期。</p>
+          <p>判断一处入口是否可长期使用，先看发布时间，再看是否有维护者署名，最后看页面是否自带上一次的检查记录。三项齐全的条目，通常比只有一条横幅的页面稳定。下表是 11 月上旬抽查 40 条在列条目的归纳结果。</p>
+          <table class="compare">
+            <thead>
+              <tr><th scope="col">类型</th><th scope="col">典型特征</th><th scope="col">抽查占比</th><th scope="col">常见失效原因</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">索引型</th><td>以列表或卡片指向目的地</td><td>52%</td><td>外链目的地改名或迁站</td></tr>
+              <tr><th scope="row">镜像型</th><td>多域名同一内容，带同步说明</td><td>31%</td><td>同步中断、证书过期</td></tr>
+              <tr><th scope="row">说明型</th><td>规则、条件、联系方式为主</td><td>17%</td><td>条款未更新、入口页搬迁</td></tr>
+            </tbody>
+          </table>
+          <div class="tag-row">
+            <a class="tag" href="/#channels">索引型入口</a>
+            <a class="tag" href="/#channels">镜像站同步说明</a>
+            <a class="tag" href="/#guide">入口可用性判断</a>
+            <a class="tag" href="/#faq">失效地址处理</a>
+          </div>
+        </section>
+
+        <!-- 2 精选内容推荐 -->
+        <section class="block" id="picks">
+          <div class="block-head">
+            <h2>本周精选内容推荐</h2>
+            <span class="hint">编辑 11-08 选取</span>
+          </div>
+          <div class="card-grid">
+            <article class="card">
+              <div class="card-media"><img src="https://picsum.photos/seed/portal-index-a/480/270" width="480" height="270" loading="lazy" alt="索引型入口的目录页面截图，左侧为分类列表"></div>
+              <div class="card-body">
+                <h3>索引型目录的三种排序逻辑</h3>
+                <p>按更新日期、按字母、按下游流量三类排法各自的适用场景，附本周抽样页面的排序方式。</p>
+                <div class="card-foot"><span>类型：目录研究</span><span>11-06</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-media"><img src="https://picsum.photos/seed/portal-mirror-b/480/270" width="480" height="270" loading="lazy" alt="镜像站同步说明页，含版本号与校对时间表"></div>
+              <div class="card-body">
+                <h3>镜像站同步说明怎么读</h3>
+                <p>版本号、校对时间、差异条目三行信息，决定镜像能否替代主站，缺一行就要打折扣。</p>
+                <div class="card-foot"><span>类型：规则解读</span><span>11-05</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-media"><img src="https://picsum.photos/seed/portal-check-c/480/270" width="480" height="270" loading="lazy" alt="浏览器地址栏与证书详情面板，用于校验入口真伪"></div>
+              <div class="card-body">
+                <h3>证书与域名交叉校验清单</h3>
+                <p>五步核对：域名主体、签发日期、证书链、跳转层级、页面署名，任何一步缺失都先搁置。</p>
+                <div class="card-foot"><span>类型：体验指南</span><span>11-04</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-media"><img src="https://picsum.photos/seed/portal-log-d/480/270" width="480" height="270" loading="lazy" alt="更新记录表格，标注新增、下架与迁移三类操作"></div>
+              <div class="card-body">
+                <h3>更新记录里的三类操作标记</h3>
+                <p>新增、下架、迁移三种标记的时间戳写法不一致，会影响按时间检索的准确度。</p>
+                <div class="card-foot"><span>类型：归档方法</span><span>11-03</span></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 3 最新更新 -->
+        <section class="block" id="latest">
+          <div class="block-head">
+            <h2>最新更新与校对记录</h2>
+            <span class="hint">2026-10-10 至 11-08</span>
+          </div>
+          <ul class="list-compact">
+            <li><time datetime="2026-11-08">11-08</time><div><div class="li-title">“影像资料索引”新增 4 条，回收 2 条失效地址</div><p class="li-desc">回收条目为旧域名停用与证书过期，已在回收区留下原地址与停用日期，便于对照旧收藏。</p></div></li>
+            <li><time datetime="2026-11-06">11-06</time><div><div class="li-title">镜像站“南区同步说明”更新至 v3.2</div><p class="li-desc">新版补充差异条目列表，同步间隔由 48 小时改为 24 小时，校对时间统一标注为北京时间。</p></div></li>
+            <li><time datetime="2026-11-02">11-02</time><div><div class="li-title">“学习资源入口”分类拆分为两个子类</div><p class="li-desc">文字资料与视频课程分开建组，原 31 条按内容形态重新归档，交叉标签保留。</p></div></li>
+            <li><time datetime="2026-10-28">10-28</time><div><div class="li-title">校验页新增“跳转层级”一栏</div><p class="li-desc">用于标注到达正文需经几次跳转；超过两级的条目在详情里单独提示。</p></div></li>
+            <li><time datetime="2026-10-21">10-21</time><div><div class="li-title">回收区集中清理 12 条长期不可达条目</div><p class="li-desc">清理前统一拨打页面所列联系电话核实，未接通者按规则封存，保留原始记录。</p></div></li>
+            <li><time datetime="2026-10-12">10-12</time><div><div class="li-title">新增“创作者证言”栏目，首批 3 位维护者署名</div><p class="li-desc">内容为维护者对建站动机与维护节奏的自述，按原文照录，不做润色。</p></div></li>
+          </ul>
+        </section>
+
+        <!-- 4 分类入口 -->
+        <section class="block" id="channels">
+          <div class="block-head">
+            <h2>按主题分类找入口</h2>
+            <span class="hint">9 个分类 · 126 条在列</span>
+          </div>
+          <div class="tag-row" style="margin-top:0">
+            <a class="tag" href="/#picks">综合导航目录</a>
+            <a class="tag" href="/#picks">影像资料索引</a>
+            <a class="tag" href="/#picks">学习资源入口</a>
+            <a class="tag" href="/#picks">工具软件下载页</a>
+            <a class="tag" href="/#picks">行业数据查询</a>
+            <a class="tag" href="/#picks">地方政府服务页</a>
+            <a class="tag" href="/#picks">公共图书馆入口</a>
+            <a class="tag" href="/#picks">开源项目镜像站</a>
+            <a class="tag" href="/#picks">创作者个人主页</a>
+          </div>
+          <p class="lede" style="margin-top:14px">每一类在点开前都标注了条目数量、最近校对日与平均跳转层级。数量少的分类通常更稳定，因为维护者能逐条核对；超过 30 条的分类，建议直接看详情页的校对时间，不要只看分类首页的汇总数。</p>
+          <div class="split" style="margin-top:6px">
+            <div class="quote-card">
+              <p>“影像资料索引”当前 22 条，11-08 校对，其中 4 条注明需登录后查看目录，另有 2 条仅在工作日开放。</p>
+              <cite>分类说明 · 校对 11-08</cite>
+            </div>
+            <div class="quote-card">
+              <p>“开源项目镜像站”当前 17 条，同步间隔从 6 小时到 7 天不等，页面直接写明间隔的条目更容易判断新鲜度。</p>
+              <cite>分类说明 · 校对 11-06</cite>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5 深度解析 -->
+        <section class="block deep" id="deep">
+          <div class="block-head">
+            <h2>深度解析：入口目录的更新频率比数量更能说明可靠性</h2>
+            <span class="hint">判断 · 可核对 · 可反驳</span>
+          </div>
+          <p>把 10 月 10 日与 11 月 8 日两次快照放在一起对比，结论很直接：条目数增长超过 20% 的目录，同期失效比例反而更高。下面把判断拆成可逐项核对的三组证据。</p>
+
+          <h3>证据一：新增速度与失效比例同向上升</h3>
+          <p>10 月 10 日快照记录在列条目 108 条，11 月 8 日为 126 条，净增 18 条。同期回收 14 条，其中 9 条在加入后 30 天内失效。按加入日期分层：9 月加入的 46 条里失效 3 条，10 月加入的 38 条里失效 6 条，10 月下旬至 11 月初加入的 22 条里失效 5 条。批次越新，失效密度越高。</p>
+          <p>这组数字能反驳“多就是好”的直觉。收录快，往往意味着单条核对的停留时间缩短，尤其是需要登录或限时开放的入口，页面能打开但内容不可达，肉眼一时看不出。</p>
+
+          <div class="callout-inline">可核对项：9 月批次失效 3/46，10 月批次 6/38，10 月下旬批次 5/22；三段数据均可在回收区按“加入日期”筛选后复核。</div>
+
+          <h3>证据二：写明校对时间的条目，后续追踪成本更低</h3>
+          <p>把 126 条按“是否在页面写明校对时间”分组：写明时间的 71 条，平均复核耗时 2.4 分钟；未写明的 55 条，平均 6.1 分钟。差距主要来自证书与跳转层级两项，写明校对时间的页面通常同时附有这两项记录，复核时不必重新走一遍流程。</p>
+          <p>维护者“林岚”在 10 月 12 日的证言里提到，她的目录页每改一次就重写页脚的校对日期，并保留最近三次的日期。这条做法成本很低，但让外部核对者能直接判断页面新旧。反过来，页脚只有年份的目录，无法区分是 1 月还是 12 月更新。</p>
+
+          <h3>证据三：迁移公告的写法决定旧地址的残留时长</h3>
+          <p>10 月出现 7 次域名迁移，其中 4 次在原地址留了跳转说明，3 次直接停用。留说明的 4 次，旧地址在 30 天内仍可被检索到，但跳转后能到达新页；直接停用的 3 次，旧地址在停用后第 5 天起就无法打开，也没有说明。两种做法没有对错，差别在于对旧收藏用户是否留了一条线索。</p>
+          <p>据此形成的判断是：迁移时至少留一句“已迁至新地址”的静态说明，成本低于后续逐个答复询问。这个判断可被反驳——如果原域名涉及安全风险，直接停用更稳妥。所以判断成立的前提是原域名可控、且迁移不涉及主体变更。</p>
+
+          <div class="verdict">
+            <b>结论（可反驳）</b>：在当前 126 条样本里，更新记录完整度与条目存活率正相关，相关系数不追求精确，但从批次失效密度、复核耗时、迁移残留三项看方向一致。若后续出现大批量高完整度却高失效的批次，这个结论应当修正。
+          </div>
+
+          <h3>事件时间线：11 月第一周的三次变动</h3>
+          <ul class="timeline">
+            <li><time datetime="2026-11-03">11-03</time><h3>“工具软件下载页”下架 2 条</h3><p>原因写明为安装包签名不符，未提供替代地址，条目移入回收区。</p></li>
+            <li><time datetime="2026-11-05">11-05</time><h3>“南区同步说明”补差异列表</h3><p>差异条目从 0 项变为 6 项，维护者在页内注明差异原因与预计补齐时间。</p></li>
+            <li><time datetime="2026-11-07">11-07</time><h3>“学习资源入口”新增视频子类</h3><p>首批 9 条，全部标注时长范围与是否需要注册，未标注的 2 条暂缓上架。</p></li>
+          </ul>
+        </section>
+
+        <!-- 6 体验指南 -->
+        <section class="block" id="guide">
+          <div class="block-head">
+            <h2>使用体验指南：五步核对一处入口</h2>
+            <span class="hint">按顺序操作，约 3 分钟</span>
+          </div>
+          <ol class="steps">
+            <li><h3>看页脚日期，不看页头横幅</h3><p>横幅常年不改，页脚日期才对应最近一次实际修改。日期格式最好到日，只有月份的先按旧页处理。</p></li>
+            <li><h3>核对域名与署名是否一致</h3><p>目录页写的主体名与证书里的组织名不一致时，先查该主体是否有迁移公告，别急着下结论。</p></li>
+            <li><h3>数跳转层级</h3><p>从入口到正文超过两级，且中间页无说明的，按“待核实”标记，等下一次校对再确认。</p></li>
+            <li><h3>查回收区是否出现过</h3><p>同一地址若在回收区留过记录，即使当前能打开，也先看停用原因是否已解决。</p></li>
+            <li><h3>记录核对时间与结论</h3><p>写下日期与三项结果（可达、署名一致、跳转层级），下次复查直接对照，省掉重复步骤。</p></li>
+          </ol>
+          <div class="quote-card" style="margin-top:6px">
+            <p>“我每周五固定花 20 分钟走一遍这五步，最有用的是第四步，回收区记录帮我避开了两个反复出现的旧地址。”</p>
+            <cite>用户 周桦 · 11-04 留言</cite>
+          </div>
+        </section>
+
+        <!-- 7 FAQ -->
+        <section class="block" id="faq">
+          <div class="block-head">
+            <h2>常见问题</h2>
+            <span class="hint">问题与答复均针对入口本身</span>
+          </div>
+
+          <details class="faq">
+            <summary>目录里标注的“校对时间”和“上线时间”有什么区别？</summary>
+            <div class="faq-body"><p>上线时间是条目第一次进入目录的日期，校对时间是最近一次实际检查的日期。两者可能相隔数月，判断可用性看后者。若一条记录只有上线时间、没有校对时间，按未校对处理，优先级排在有校对时间的条目之后。</p></div>
+          </details>
+
+          <details class="faq">
+            <summary>镜像站和主站内容一致，可以只用镜像吗？</summary>
+            <div class="faq-body"><p>取决于镜像页是否写明同步间隔与差异条目。写明 24 小时同步且差异列表为空的镜像，短期替代主站问题不大；同步间隔超过 7 天、或差异列表长期不更新的镜像，只适合查阅历史内容，不适合获取最新说明。</p></div>
+          </details>
+
+          <details class="faq">
+            <summary>入口打不开，应该先怀疑什么？</summary>
+            <div class="faq-body"><p>先排除本地因素：换网络、清缓存、看是否被安全软件拦截。三步都正常，再查目录的回收区是否有同地址记录，以及页面是否在维护公告里写了停用时间。最后才考虑地址本身失效。</p></div>
+          </details>
+
+          <details class="faq">
+            <summary>为什么有些条目注明“需登录后查看目录”？</summary>
+            <div class="faq-body"><p>这类入口的首页只展示简介，真正的索引在内页。目录里单独标注，是为了避免把“首页可打开”误当成“内容可访问”。核对时至少完成一次登录流程，确认内页索引存在，才算通过。</p></div>
+          </details>
+
+          <details class="faq">
+            <summary>更新记录里的“回收”和“下架”是同一件事吗？</summary>
+            <div class="faq-body"><p>不是。回收指地址失效或内容不可达，被动移出；下架指维护者主动移除，可能因为签名不符、条款变更或重复收录。两者在记录里分开标注，处理方式也不同：回收条目要定期回查，下架条目一般不重上。</p></div>
+          </details>
+
+          <details class="faq">
+            <summary>怎么判断一个入口是不是官方页面？</summary>
+            <div class="faq-body"><p>看三处：域名主体与页面署名是否一致、页脚是否列出联系方式或备案信息、页面是否自引用了可查证的公告。三处缺两处以上，按第三方整理页看待，不作为最终依据。</p></div>
+          </details>
+        </section>
+
+        <!-- 8 用户评论 -->
+        <section class="block" id="reviews">
+          <div class="block-head">
+            <h2>用户留言与使用反馈</h2>
+            <span class="hint">近期 5 条 · 含中性评价</span>
+          </div>
+
+          <div class="review">
+            <div class="review-head"><b>陈屿</b><span>11-08 · 评价“影像资料索引”</span></div>
+            <p>影像资料索引这次回收的两条旧地址，其中一条我收藏了两年，直到今天才知道换了域名。回收区保留原地址这个做法有用，至少能对上号。</p>
+          </div>
+          <div class="review">
+            <div class="review-head"><b>许知远</b><span>11-07 · 评价“南区同步说明”</span></div>
+            <p>差异列表补上之后清楚多了。之前只知道镜像同步慢，不知道具体慢在哪，现在能看到 6 项差异和预计补齐时间，判断起来有依据。</p>
+          </div>
+          <div class="review">
+            <div class="review-head"><b>匿名用户</b><span>11-06 · 关于跳转层级</span></div>
+            <p>跳转层级那个提示挺好，比我之前一个个点开快。不过有些页面中间页做了自动跳转，实际体验只有一级，标注成两级略微保守，见仁见智。</p>
+          </div>
+          <div class="review">
+            <div class="review-head"><b>周桦</b><span>11-04 · 关于校对节奏</span></div>
+            <p>每周五 20 分钟走五步核对的习惯我用了三周。第三周发现一个地址证书过期但页面还能开，要不是看了证书详情根本注意不到。</p>
+          </div>
+          <div class="review">
+            <div class="review-head"><b>路遥</b><span>11-02 · 关于分类拆分</span></div>
+            <p>学习资源拆成文字和视频两类之后，找课程方便了。就是原来收藏的那条现在挂在视频子类下，交叉标签只标了一个，稍微绕了一下才找到。</p>
+          </div>
+        </section>
+
+        <!-- 9 相关资讯 -->
+        <section class="block" id="news">
+          <div class="block-head">
+            <h2>相关资讯与公告摘录</h2>
+            <span class="hint">外部信息 · 附出处与日期</span>
+          </div>
+          <ul class="list-compact">
+            <li><time datetime="2026-11-07">11-07</time><div><div class="li-title">某开源镜像站公告：证书换发，旧指纹停用</div><p class="li-desc">公告发布方为站点运维组，页面注明旧证书指纹于 11-06 停用，新指纹同步公布在页脚。已在镜像分类里更新对应条目。</p></div></li>
+            <li><time datetime="2026-11-05">11-05</time><div><div class="li-title">教育类资源平台调整注册流程</div><p class="li-desc">新流程要求邮箱验证后二次确认，公告明确说明 11-03 起生效。涉及 7 条“学习资源入口”条目，已补“需二次确认”提示。</p></div></li>
+            <li><time datetime="2026-10-30">10-30</time><div><div class="li-title">地方政务服务页面改版，导航层级收窄</div><p class="li-desc">改版后一级导航从 9 项减为 6 项，服务入口集中到首页中部。对应条目的跳转层级由三级改为两级，已更新。</p></div></li>
+            <li><time datetime="2026-10-24">10-24</time><div><div class="li-title">图书馆联合目录上线统一检索页</div><p class="li-desc">六家公共图书馆的联合检索入口合并，原分散地址保留跳转说明。目录里合并为一条主条目，另附 6 个旧地址作为历史记录。</p></div></li>
+          </ul>
+        </section>
+
+        <!-- 10 相关推荐 -->
+        <section class="block" id="related">
+          <div class="block-head">
+            <h2>相关推荐</h2>
+            <span class="hint">按浏览路径组织</span>
+          </div>
+          <div class="tag-row" style="margin-top:0">
+            <a class="tag" href="/#picks">综合导航目录推荐</a>
+            <a class="tag" href="/#picks">开源项目镜像站清单</a>
+            <a class="tag" href="/#guide">入口可用性五步核对法</a>
+            <a class="tag" href="/#faq">镜像站同步间隔怎么看</a>
+            <a class="tag" href="/#deep">更新频率与失效比例对照</a>
+            <a class="tag" href="/#latest">回收区历史地址查询</a>
+            <a class="tag" href="/#picks">公共图书馆联合检索入口</a>
+            <a class="tag" href="/#faq">需登录入口的核对方式</a>
+            <a class="tag" href="/#latest">证书换发公告记录</a>
+          </div>
+          <div class="split" style="margin-top:16px">
+            <div class="quote-card">
+              <p>如果只看一条，建议先读“更新记录完整度”那一节，里面有 10 月与 11 月两批快照的失效密度对比。</p>
+              <cite>编辑推荐 · 11-08</cite>
+            </div>
+            <div class="quote-card">
+              <p>需要按分类找，直接去分类入口页，九个分类都标了条目数量与最近校对日。</p>
+              <cite>编辑推荐 · 11-07</cite>
+            </div>
+          </div>
+        </section>
+
+        <!-- 11 创作者证言 -->
+        <section class="block" id="creators">
+          <div class="block-head">
+            <h2>维护者证言</h2>
+            <span class="hint">按原文照录 · 已获署名许可</span>
+          </div>
+          <div class="credit" style="margin-bottom:14px">
+            <span><b>林岚</b> · 个人目录页维护 4 年 · 平均每周更新 2 次</span>
+            <span class="stars">★★★★☆</span>
+            <p style="margin:6px 0 0;font-size:.9rem;color:var(--ink-2)">“我一开始按月更新，后来发现按周更省事，因为每次只改一两条，写校对日期也快。最怕的是迁移没说清楚，旧收藏用户来问，解释一遍要五分钟。”</p>
+          </div>
+          <div class="credit" style="margin-bottom:14px">
+            <span><b>沈一鸣</b> · 影像资料索引协作组 · 条目 22 条</span>
+            <span class="stars">★★★★★</span>
+            <p style="margin:6px 0 0;font-size:.9rem;color:var(--ink-2)">“我们定了条规矩：每条上线前至少两个人各走一遍五步核对，第二个人的结论写进备注。上周就是靠备注发现一条地址能开但内页索引是空的。”</p>
+          </div>
+          <div class="credit">
+            <span><b>顾行舟</b> · 开源镜像站志愿者 · 负责同步间隔记录</span>
+            <span class="stars">★★★★☆</span>
+            <p style="margin:6px 0 0;font-size:.9rem;color:var(--ink-2)">“同步间隔我们按最近 30 天的日志算中位数，不按单次同步时间。单次偏差太大，写进页面会误导人。这个算法写在说明页第二段。”</p>
+          </div>
+        </section>
+
+        <!-- 12 榜单 -->
+        <section class="block" id="ranking">
+          <div class="block-head">
+            <h2>条目可信度分层榜</h2>
+            <span class="hint">按三项指标分组，非绝对优劣</span>
+          </div>
+          <p class="mini-meta">分层依据：校对时间是否到日、是否列出差异或停用原因、是否保留最近三次更新记录。三项全中为 A 层，中两项为 B 层，一项及以下为 C 层。分层只用于排序核对顺序，不构成功效判断。</p>
+          <table class="compare">
+            <thead>
+              <tr><th scope="col">层级</th><th scope="col">条目数</th><th scope="col">代表条目</th><th scope="col">建议核对顺序</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">A 层</th><td>28</td><td>南区同步说明、公共图书馆联合检索入口</td><td>最先核对，结论可作对照基准</td></tr>
+              <tr><th scope="row">B 层</th><td>63</td><td>影像资料索引、学习资源入口</td><td>常规核对，重点看差异列表</td></tr>
+              <tr><th scope="row">C 层</th><td>35</td><td>部分创作者个人主页、小型下载页</td><td>延后核对，先看近 30 天有无改动</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+      </div>
+
+      <!-- 侧栏 -->
+      <aside class="side-col" aria-label="侧栏">
+
+        <div class="side-card">
+          <h2>栏目导航</h2>
+          <nav aria-label="侧栏栏目导航">
+            <ul class="side-nav" id="sideNav">
+              <li><a href="/#overview">入口聚合的基本规则</a></li>
+              <li><a href="/#picks">本周精选内容推荐</a></li>
+              <li><a href="/#latest">最新更新与校对记录</a></li>
+              <li><a href="/#channels">按主题分类找入口</a></li>
+              <li><a href="/#deep">深度解析</a></li>
+              <li><a href="/#guide">使用体验指南</a></li>
+              <li><a href="/#faq">常见问题</a></li>
+              <li><a href="/#reviews">用户留言与反馈</a></li>
+              <li><a href="/#news">相关资讯</a></li>
+              <li><a href="/#related">相关推荐</a></li>
+              <li><a href="/#creators">维护者证言</a></li>
+              <li><a href="/#ranking">可信度分层榜</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="side-card">
+          <h2>近三次校对</h2>
+          <ul class="side-list">
+            <li><a href="/#latest">11-08 影像资料索引回收 2 条</a><small>原地址与停用原因已留档</small></li>
+            <li><a href="/#latest">11-06 南区同步说明更新至 v3.2</a><small>同步间隔 24 小时</small></li>
+            <li><a href="/#latest">11-02 学习资源拆分两类</a><small>31 条重新归档</small></li>
+          </ul>
+        </div>
+
+        <div class="side-card">
+          <h2>核对工具</h2>
+          <ul class="side-list">
+            <li><a href="/#guide">五步核对流程</a><small>约 3 分钟 / 条</small></li>
+            <li><a href="/#faq">需要登录的入口怎么核对</a><small>完成一次登录流程</small></li>
+            <li><a href="/#faq">证书与域名交叉校验</a><small>看证书组织名</small></li>
+          </ul>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="brand" style="gap:10px">
+        <svg class="brand-mark" viewBox="0 0 40 40" role="img" aria-label="页脚标识">
+          <rect width="40" height="40" rx="10" fill="#12233b"></rect>
+          <circle cx="20" cy="20" r="11" fill="none" stroke="#e8b04b" stroke-width="2.6"></circle>
+          <path d="M11 20h18M20 11v18" stroke="#e8b04b" stroke-width="2.2" stroke-linecap="round"></path>
+        </svg>
+        <span class="brand-text">
+          <strong>传送门入口最新发布</strong>
+          <span>导航 · 归档 · 校验</span>
+        </span>
+      </div>
+      <p>把入口当成可核查的记录来维护：上线、校对、回收各有时间戳，旧地址留痕，方便对照收藏与历史查询。</p>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <h3>内容</h3>
+        <ul>
+          <li><a href="/#overview">领域概览</a></li>
+          <li><a href="/#picks">精选推荐</a></li>
+          <li><a href="/#latest">最新更新</a></li>
+          <li><a href="/#channels">分类入口</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>方法</h3>
+        <ul>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#ranking">可信度分层</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>互动</h3>
+        <ul>
+          <li><a href="/#reviews">用户留言</a></li>
+          <li><a href="/#creators">维护者证言</a></li>
+          <li><a href="/#related">相关推荐</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>更新时间：2026-11-08，对应更新记录中“影像资料索引新增 4 条、回收 2 条”。</span>
+    <span>页面内条目、数量、评分与留言均为示例数据，仅用于展示目录结构与核对方法。</span>
+    <span>© 2026 传送门入口最新发布 · 内容按示例数据组织</span>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="回到顶部">
+  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 16V4M4 10l6-6 6 6"/></svg>
+</button>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "传送门入口最新发布",
+  "description": "按主题归档的入口目录，记录上线日期、可用状态与校验方式，含分类入口、更新记录与常见问题。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "目录里标注的“校对时间”和“上线时间”有什么区别？",
+      "acceptedAnswer": {"@type": "Answer", "text": "上线时间是条目第一次进入目录的日期，校对时间是最近一次实际检查的日期。判断可用性看校对时间；只有上线时间的记录按未校对处理。"}
+    },
+    {
+      "@type": "Question",
+      "name": "镜像站和主站内容一致，可以只用镜像吗？",
+      "acceptedAnswer": {"@type": "Answer", "text": "取决于镜像页是否写明同步间隔与差异条目。24 小时同步且差异为空的镜像可短期替代；间隔超过 7 天或差异列表不更新的，只适合查阅历史内容。"}
+    },
+    {
+      "@type": "Question",
+      "name": "入口打不开，应该先怀疑什么？",
+      "acceptedAnswer": {"@type": "Answer", "text": "先排除本地因素：换网络、清缓存、看是否被安全软件拦截；再查回收区是否有同地址记录与维护公告的停用时间；最后才考虑地址本身失效。"}
+    },
+    {
+      "@type": "Question",
+      "name": "为什么有些条目注明“需登录后查看目录”？",
+      "acceptedAnswer": {"@type": "Answer", "text": "这类入口首页只展示简介，真正的索引在内页。标注是为了避免把首页可打开误当成内容可访问，核对时至少完成一次登录流程。"}
+    },
+    {
+      "@type": "Question",
+      "name": "更新记录里的“回收”和“下架”是同一件事吗？",
+      "acceptedAnswer": {"@type": "Answer", "text": "不是。回收指地址失效或内容不可达，被动移出；下架指维护者主动移除。两者分开标注，回收条目要定期回查，下架条目一般不再重上。"}
+    },
+    {
+      "@type": "Question",
+      "name": "怎么判断一个入口是不是官方页面？",
+      "acceptedAnswer": {"@type": "Answer", "text": "看域名主体与页面署名是否一致、页脚是否列出联系方式或备案信息、页面是否引用可查证的公告。三处缺两处以上，按第三方整理页看待。"}
+    }
+  ]
+}
+</script>
+
+<script>
+(function(){
+  "use strict";
+
+  var menuBtn = document.getElementById('menuBtn');
+  var mainNav = document.getElementById('mainNav');
+
+  if (menuBtn && mainNav) {
+    menuBtn.addEventListener('click', function(){
+      var open = mainNav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    mainNav.addEventListener('click', function(e){
+      if (e.target.tagName === 'A' && window.innerWidth <= 720) {
+        mainNav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  /* 本地查找 */
+  var searchInput = document.getElementById('siteSearch');
+  var feedback = document.getElementById('searchFeedback');
+  var searchIndex = [];
+  var sections = document.querySelectorAll('main section.block, main section.hero');
+  sections.forEach(function(sec){
+    var h = sec.querySelector('h1, h2');
+    var texts = [];
+    sec.querySelectorAll('h3, p, li, .tag, summary').forEach(function(el){
+      var t = (el.textContent || '').trim();
+      if (t) texts.push(t);
+    });
+    if (h) {
+      searchIndex.push({
+        id: sec.id,
+        title: h.textContent.trim(),
+        text: (h.textContent + ' ' + texts.join(' ')).toLowerCase()
+      });
+    }
+  });
+
+  function escapeHtml(s){
+    return s.replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  if (searchInput && feedback) {
+    searchInput.addEventListener('input', function(){
+      var q = searchInput.value.trim().toLowerCase();
+      if (!q) {
+        feedback.classList.remove('show');
+        feedback.innerHTML = '';
+        return;
+      }
+      var hits = searchIndex.filter(function(item){
+        return item.text.indexOf(q) !== -1;
+      }).slice(0, 5);
+
+      feedback.classList.add('show');
+      if (!hits.length) {
+        feedback.innerHTML = '没有找到与“<strong>' + escapeHtml(searchInput.value.trim()) + '</strong>”匹配的条目，试试“镜像站”“校对时间”“回收区”等词。';
+        return;
+      }
+      var html = '<div style="margin-bottom:6px;color:#6b7486">找到 ' + hits.length + ' 个相关板块：</div>';
+      hits.forEach(function(h){
+        html += '<div style="padding:4px 0;border-bottom:1px dashed #dde2ea"><a href="/#' + h.id + '">' + escapeHtml(h.title) + '</a></div>';
+      });
+      feedback.innerHTML = html;
+    });
+
+    document.addEventListener('click', function(e){
+      if (!feedback.contains(e.target) && e.target !== searchInput) {
+        feedback.classList.remove('show');
+      }
+    });
+  }
+
+  /* 回到顶部 */
+  var toTop = document.getElementById('toTop');
+  if (toTop) {
+    var onScroll = function(){
+      if (window.scrollY > 520) toTop.classList.add('show');
+      else toTop.classList.remove('show');
+    };
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+    toTop.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+
+  /* 侧栏滚动高亮 */
+  var sideLinks = document.querySelectorAll('#sideNav a');
+  var targetIds = [];
+  sideLinks.forEach(function(a){
+    var id = a.getAttribute('href').replace('/#','');
+    targetIds.push(id);
+  });
+  var targets = targetIds.map(function(id){ return document.getElementById(id); }).filter(Boolean);
+
+  if ('IntersectionObserver' in window && targets.length) {
+    var visible = {};
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        visible[en.target.id] = en.isIntersecting;
+      });
+      var current = null;
+      for (var i = 0; i < targets.length; i++) {
+        if (visible[targets[i].id]) { current = targets[i].id; break; }
+      }
+      if (current) {
+        sideLinks.forEach(function(a){
+          a.classList.toggle('active', a.getAttribute('href') === '/#' + current);
+        });
+      }
+    }, {rootMargin: '-110px 0px -55% 0px', threshold: 0});
+
+    targets.forEach(function(t){ io.observe(t); });
+  }
+})();
+</script>
+</body>
+  </html>
