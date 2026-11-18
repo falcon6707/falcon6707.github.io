@@ -1,0 +1,895 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>九色91网官网-资源站点导航与内容观察</title>
+<meta name="description" content="九色91网官网是一个面向资源导航与内容浏览的站点，本文围绕九色91网官网的频道划分、入口设计、内容更新节奏与使用体验展开观察，梳理九色91网官网的导航结构、板块布局与常见问题，并给出可核对的使用判断与体验建议，便于读者快速了解站点定位。">
+<meta name="keywords" content="九色91网官网">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b1030'/%3E%3Ccircle cx='22' cy='24' r='7' fill='%23ff7a59'/%3E%3Ccircle cx='42' cy='24' r='7' fill='%23f2c14e'/%3E%3Ccircle cx='32' cy='42' r='7' fill='%2358c2b3'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "九色91网官网",
+  "description": "资源导航与内容浏览站点的观察与使用指南",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "九色91网官网的频道导航怎么分类？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "站点频道按内容类型分为影视、音乐、图集、文档、软件、教程、榜单、话题八类，每类下再按时间与热度二级排序，导航条带下拉分组。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "资源更新记录在哪里查看？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "首页最新更新区按小时滚动展示条目编号、标题与入库时间，页尾更新时间对应最近一次批量入库，2026-11-08 为当前记录日期。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "搜索不到内容怎么办？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "搜索框在本地条目索引内匹配标题与标签，无结果时给出空态提示并推荐相邻频道，不跳转外部搜索。"
+      }
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --bg:#0f0a18;
+  --bg2:#161022;
+  --panel:#1d1530;
+  --panel2:#241a3b;
+  --line:#33264d;
+  --ink:#f3eefc;
+  --ink2:#c4b8dd;
+  --ink3:#8f83ab;
+  --brand:#ff7a59;
+  --brand2:#f2c14e;
+  --accent:#58c2b3;
+  --accent2:#8b7cf6;
+  --radius:14px;
+  --radius-sm:8px;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+  --s1:6px; --s2:12px; --s3:20px; --s4:32px; --s5:48px;
+  --fs:16px;
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  --stick:96px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);
+  color:var(--ink);
+  font-family:var(--font);
+  font-size:var(--fs);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--brand2);text-decoration:none}
+a:hover{color:var(--brand)}
+img{max-width:100%;display:block}
+.wrap{width:min(1180px,94vw);margin:0 auto}
+h1,h2,h3,h4{line-height:1.3;font-weight:700}
+h1{font-size:clamp(26px,4vw,40px)}
+h2{font-size:clamp(20px,2.6vw,26px)}
+h3{font-size:17px}
+p{margin:.5em 0}
+small{color:var(--ink3)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+/* ===== 吸顶公告条 ===== */
+.announce{
+  position:sticky;top:0;z-index:60;
+  background:linear-gradient(90deg,#3a1f4d,#2a1840);
+  border-bottom:1px solid var(--line);
+  font-size:13.5px;color:var(--ink2);
+}
+.announce .wrap{display:flex;gap:12px;align-items:center;padding:8px 0;flex-wrap:wrap}
+.announce b{color:var(--brand2)}
+.announce .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;margin-right:6px;box-shadow:0 0 0 3px rgba(88,194,179,.15)}
+.announce a{font-size:13px}
+
+/* ===== 吸顶页头 ===== */
+header.site{
+  position:sticky;top:38px;z-index:55;
+  background:rgba(15,10,24,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.head-in{display:flex;align-items:center;gap:18px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.brand svg{width:34px;height:34px}
+.brand .bt{font-weight:800;font-size:18px;letter-spacing:.5px;color:var(--ink)}
+.brand .bt span{color:var(--brand)}
+nav.theme{display:flex;gap:4px;flex-wrap:wrap;flex:1}
+nav.theme a{
+  color:var(--ink2);font-size:14px;padding:6px 10px;border-radius:8px;
+  transition:background .15s,color .15s;
+}
+nav.theme a:hover,nav.theme a:focus-visible{background:var(--panel2);color:var(--ink)}
+.head-tools{display:flex;align-items:center;gap:8px}
+.search{display:flex;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:4px 6px 4px 10px}
+.search input{
+  background:transparent;border:0;color:var(--ink);font-size:14px;font-family:var(--font);
+  width:150px;outline:none;
+}
+.search input::placeholder{color:var(--ink3)}
+.search button{
+  background:var(--brand);color:#1b1030;border:0;border-radius:7px;padding:4px 10px;
+  font-size:13px;font-weight:700;cursor:pointer;font-family:var(--font);
+}
+.menu-btn{
+  display:none;background:var(--panel);border:1px solid var(--line);color:var(--ink);
+  border-radius:8px;padding:6px 10px;font-size:14px;cursor:pointer;font-family:var(--font);
+}
+#searchMsg{font-size:13px;color:var(--brand2);padding:6px 0;display:none}
+
+/* ===== 首屏 ===== */
+.hero{
+  position:relative;overflow:hidden;
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(600px 300px at 85% 10%,rgba(139,124,246,.22),transparent 60%),
+    radial-gradient(500px 260px at 10% 90%,rgba(255,122,89,.16),transparent 60%);
+}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;padding:52px 0 48px;align-items:center}
+.hero .kicker{
+  display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--accent);
+  border:1px solid rgba(88,194,179,.4);border-radius:999px;padding:4px 12px;margin-bottom:16px;
+}
+.hero p.lead{color:var(--ink2);font-size:16px;max-width:52ch}
+.hero .cta{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.btn{
+  display:inline-block;padding:11px 22px;border-radius:11px;font-weight:700;font-size:15px;
+  transition:transform .15s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:linear-gradient(120deg,var(--brand),var(--brand2));color:#1b1030}
+.btn.ghost{border:1px solid var(--line);color:var(--ink);background:var(--panel)}
+.hero .stats{display:flex;gap:26px;margin-top:28px;flex-wrap:wrap}
+.hero .stats div b{display:block;font-size:22px;color:var(--brand2)}
+.hero .stats div small{font-size:12px;color:var(--ink3)}
+.hero-art{position:relative;min-height:300px}
+.hero-art svg{width:100%;height:auto}
+
+/* ===== 布局 ===== */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 288px;gap:34px;padding:44px 0}
+main section{margin-bottom:52px;scroll-margin-top:var(--stick)}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.sec-head h2{position:relative;padding-left:14px}
+.sec-head h2::before{
+  content:"";position:absolute;left:0;top:5px;bottom:5px;width:4px;border-radius:3px;
+  background:linear-gradient(180deg,var(--brand),var(--accent2));
+}
+.sec-head a{font-size:13px;color:var(--ink3)}
+.sec-head a:hover{color:var(--brand2)}
+
+/* 卡片网格 */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px;display:flex;flex-direction:column;gap:8px;
+  transition:transform .15s,border-color .15s;
+}
+.card:hover{transform:translateY(-3px);border-color:#4a3a6b}
+.card h3{font-size:15.5px}
+.card h3 a{color:var(--ink)}
+.card h3 a:hover{color:var(--brand2)}
+.card p{font-size:13.5px;color:var(--ink2);margin:0}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
+.tag{
+  font-size:12px;color:var(--accent);background:rgba(88,194,179,.1);
+  border:1px solid rgba(88,194,179,.25);border-radius:999px;padding:2px 9px;
+}
+.tag.warm{color:var(--brand2);background:rgba(242,193,78,.1);border-color:rgba(242,193,78,.3)}
+.meta{font-size:12px;color:var(--ink3);display:flex;gap:10px;flex-wrap:wrap}
+
+/* 紧凑列表 */
+.tight{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.tight li{list-style:none;display:flex;gap:12px;align-items:baseline;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--panel);font-size:14px}
+.tight li:last-child{border-bottom:0}
+.tight li:hover{background:var(--panel2)}
+.tight .no{color:var(--ink3);font-size:12.5px;min-width:34px;font-variant-numeric:tabular-nums}
+.tight .t{flex:1;color:var(--ink2)}
+.tight .t a{color:var(--ink)}
+.tight time{font-size:12px;color:var(--ink3);white-space:nowrap}
+
+/* 分类入口标签索引 */
+.index-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.index-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:14px;display:block;transition:background .15s;
+}
+.index-item:hover{background:var(--panel2)}
+.index-item b{display:block;color:var(--ink);font-size:14.5px;margin-bottom:3px}
+.index-item small{font-size:12px;color:var(--ink3)}
+
+/* 深度解析 */
+.deep{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px 26px 18px}
+.deep h3{margin-top:22px;color:var(--brand2);font-size:17px}
+.deep h3:first-child{margin-top:0}
+.deep p{color:var(--ink2);font-size:14.5px}
+.deep ul{margin:8px 0 8px 20px;color:var(--ink2);font-size:14.5px}
+.deep li{margin:4px 0}
+.quote{
+  border-left:3px solid var(--accent2);background:var(--panel2);
+  padding:12px 16px;border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  font-size:14px;color:var(--ink2);margin:14px 0;
+}
+.quote .who{display:block;font-size:12px;color:var(--ink3);margin-top:6px}
+
+/* 步骤 */
+.steps{counter-reset:st;display:flex;flex-direction:column;gap:0}
+.steps li{
+  list-style:none;counter-increment:st;position:relative;padding:14px 0 14px 52px;
+  border-bottom:1px dashed var(--line);font-size:14px;color:var(--ink2);
+}
+.steps li:last-child{border-bottom:0}
+.steps li::before{
+  content:counter(st,decimal-leading-zero);position:absolute;left:0;top:12px;
+  width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+  font-size:13px;font-weight:800;background:var(--panel2);color:var(--brand2);
+  border:1px solid var(--line);
+}
+.steps b{color:var(--ink)}
+
+/* 对照面板 */
+.compare{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.compare > div{padding:18px}
+.compare > div:first-child{background:var(--panel);border-right:1px solid var(--line)}
+.compare > div:last-child{background:var(--panel2)}
+.compare h4{font-size:14px;color:var(--brand2);margin-bottom:10px}
+.compare ul{margin-left:18px;font-size:13.5px;color:var(--ink2)}
+.compare li{margin:6px 0}
+
+/* FAQ */
+details.faq{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);margin-bottom:10px}
+details.faq summary{
+  cursor:pointer;padding:14px 16px;font-size:14.5px;font-weight:600;color:var(--ink);
+  list-style:none;display:flex;justify-content:space-between;gap:10px;
+}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";color:var(--brand2);font-weight:700;font-size:18px;line-height:1}
+details.faq[open] summary::after{content:"–"}
+details.faq .ans{padding:0 16px 16px;font-size:13.8px;color:var(--ink2)}
+
+/* 评论 */
+.cm{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.cm-item{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px}
+.cm-item .who{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.avatar{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:800;color:#1b1030}
+.cm-item .name{font-size:13px;color:var(--ink);font-weight:600}
+.cm-item .when{font-size:11.5px;color:var(--ink3);margin-left:auto}
+.cm-item p{font-size:13.5px;color:var(--ink2)}
+.cm-item .ref{font-size:12px;color:var(--accent);display:block;margin-top:8px}
+
+/* 时间线 */
+.timeline{position:relative;padding-left:22px;border-left:2px solid var(--line)}
+.timeline .tl{position:relative;padding:0 0 18px 8px;font-size:14px;color:var(--ink2)}
+.timeline .tl::before{
+  content:"";position:absolute;left:-31px;top:7px;width:10px;height:10px;border-radius:50%;
+  background:var(--brand2);border:2px solid var(--bg);
+}
+.timeline .tl time{display:block;font-size:12px;color:var(--brand2);margin-bottom:2px}
+
+/* 标签云 */
+.cloud{display:flex;flex-wrap:wrap;gap:8px}
+.cloud a{
+  font-size:13px;color:var(--ink2);background:var(--panel);border:1px solid var(--line);
+  padding:6px 12px;border-radius:999px;
+}
+.cloud a:hover{border-color:var(--brand2);color:var(--brand2)}
+
+/* 侧栏 */
+aside{font-size:13.5px}
+aside .side-box{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-bottom:18px}
+aside h3{font-size:14.5px;margin-bottom:10px;color:var(--brand2)}
+aside nav a{
+  display:block;padding:6px 10px;border-radius:7px;color:var(--ink2);font-size:13.5px;
+  border-left:2px solid transparent;
+}
+aside nav a:hover,aside nav a.active{background:var(--panel2);color:var(--ink);border-left-color:var(--brand)}
+.rank li{list-style:none;display:flex;gap:8px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:13px}
+.rank li:last-child{border-bottom:0}
+.rank .n{font-weight:800;color:var(--brand);min-width:16px}
+
+/* 页尾 */
+footer{border-top:1px solid var(--line);background:#0b0712;padding:40px 0 26px;margin-top:20px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:26px}
+footer .fbrand{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+footer .fbrand .bt{font-weight:800;font-size:17px}
+footer p{font-size:13px;color:var(--ink3);line-height:1.9}
+footer h4{font-size:13.5px;color:var(--ink);margin-bottom:10px}
+footer ul li{list-style:none;margin:7px 0}
+footer ul a{font-size:13px;color:var(--ink3)}
+footer ul a:hover{color:var(--brand2)}
+.foot-bottom{border-top:1px solid var(--line);margin-top:26px;padding-top:16px;font-size:12.5px;color:var(--ink3);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* 回到顶部 */
+#toTop{
+  position:fixed;right:20px;bottom:24px;z-index:70;width:44px;height:44px;border-radius:12px;
+  background:var(--brand);color:#1b1030;border:0;font-size:18px;font-weight:800;cursor:pointer;
+  display:none;box-shadow:var(--shadow);
+}
+#toTop.show{display:block}
+
+/* 响应式 */
+@media(max-width:1000px){
+  .layout{grid-template-columns:1fr}
+  aside{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  aside .side-box{margin-bottom:0}
+  .hero .wrap{grid-template-columns:1fr;gap:20px}
+  .hero-art{min-height:0;max-width:440px}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .index-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  :root{--stick:120px}
+  .announce .wrap{padding:6px 0}
+  header.site{top:34px}
+  .head-in{flex-wrap:wrap;gap:10px}
+  .menu-btn{display:inline-block}
+  nav.theme{
+    display:none;width:100%;flex-direction:column;gap:2px;
+    padding:8px 0 4px;border-top:1px solid var(--line);
+  }
+  nav.theme.open{display:flex}
+  .search input{width:104px}
+  .grid-3,.grid-2,.index-grid,.cm,.compare{grid-template-columns:1fr}
+  .compare > div:first-child{border-right:0;border-bottom:1px solid var(--line)}
+  aside{grid-template-columns:1fr}
+  .hero .wrap{padding:34px 0 30px}
+  .hero .stats{gap:18px}
+  .foot-grid{grid-template-columns:1fr}
+  #toTop{right:12px;bottom:16px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .card:hover,.btn:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 公告条 -->
+<div class="announce" id="announce">
+  <div class="wrap">
+    <span><i class="dot"></i><b>2026-11-08 更新</b>：图集频道新增 46 条入库记录，影视分区重排按年份筛选</span>
+    <a href="/#updates">查看更新明细 →</a>
+  </div>
+</div>
+
+<!-- 页头 -->
+<header class="site">
+  <div class="wrap head-in">
+    <a class="brand" href="/#top" aria-label="九色91网官网 首页">
+      <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#241a3b"/>
+        <circle cx="22" cy="23" r="8" fill="#ff7a59"/>
+        <circle cx="43" cy="25" r="6" fill="#f2c14e"/>
+        <circle cx="33" cy="43" r="8" fill="#58c2b3"/>
+        <path d="M30 32 L34 36 L42 26" stroke="#f3eefc" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span class="bt">九色<span>91</span>网官网</span>
+    </a>
+    <nav class="theme" id="themeNav" aria-label="主题导航">
+      <a href="/#channels">影视</a>
+      <a href="/#channels">音乐</a>
+      <a href="/#channels">图集</a>
+      <a href="/#channels">文档</a>
+      <a href="/#channels">软件</a>
+      <a href="/#guide">教程</a>
+      <a href="/#rank">榜单</a>
+      <a href="/#faq">问答</a>
+    </nav>
+    <div class="head-tools">
+      <form class="search" id="searchForm" role="search" onsubmit="return false;">
+        <input id="searchInput" type="search" placeholder="搜条目 / 标签" aria-label="站内搜索">
+        <button type="submit" id="searchBtn">查找</button>
+      </form>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="themeNav">菜单</button>
+    </div>
+  </div>
+  <div class="wrap"><div id="searchMsg" role="status" aria-live="polite"></div></div>
+</header>
+
+<!-- 首屏 -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="kicker">内容导航 · 每 2 小时同步入库</span>
+      <h1>九色91网官网</h1>
+      <p class="lead">按影视、音乐、图集、文档、软件五类归档资源条目，首页展示入库编号、频道归属与更新时间，每一条记录都可在对应频道按编号或标签复核。站点不存放文件本体，只做索引与路径整理。</p>
+      <div class="cta">
+        <a class="btn primary" href="/#channels">进入频道索引</a>
+        <a class="btn ghost" href="/#updates">看最新入库</a>
+      </div>
+      <div class="stats">
+        <div><b>46</b><small>今日新增条目（11-08）</small></div>
+        <div><b>1,284</b><small>在库可检索条目</small></div>
+        <div><b>8</b><small>一级频道</small></div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 420 320" role="img">
+        <defs>
+          <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#8b7cf6" stop-opacity=".45"/>
+            <stop offset="1" stop-color="#58c2b3" stop-opacity=".18"/>
+          </linearGradient>
+        </defs>
+        <rect x="20" y="30" width="380" height="260" rx="20" fill="url(#hg)" stroke="#33264d"/>
+        <rect x="44" y="56" width="150" height="42" rx="9" fill="#1d1530" stroke="#4a3a6b"/>
+        <rect x="56" y="68" width="80" height="7" rx="3.5" fill="#f2c14e"/>
+        <rect x="56" y="81" width="110" height="6" rx="3" fill="#8f83ab"/>
+        <rect x="212" y="56" width="164" height="110" rx="12" fill="#1d1530" stroke="#4a3a6b"/>
+        <circle cx="252" cy="93" r="17" fill="#ff7a59"/>
+        <rect x="280" y="80" width="76" height="8" rx="4" fill="#f3eefc" opacity=".8"/>
+        <rect x="280" y="96" width="56" height="6" rx="3" fill="#8f83ab"/>
+        <rect x="280" y="120" width="64" height="6" rx="3" fill="#8f83ab"/>
+        <rect x="44" y="112" width="150" height="54" rx="10" fill="#1d1530" stroke="#4a3a6b"/>
+        <rect x="58" y="128" width="70" height="7" rx="3.5" fill="#58c2b3"/>
+        <rect x="58" y="142" width="104" height="6" rx="3" fill="#8f83ab"/>
+        <rect x="44" y="180" width="332" height="88" rx="12" fill="#1d1530" stroke="#4a3a6b"/>
+        <rect x="62" y="198" width="46" height="7" rx="3.5" fill="#f2c14e"/>
+        <rect x="62" y="216" width="290" height="6" rx="3" fill="#8f83ab"/>
+        <rect x="62" y="230" width="240" height="6" rx="3" fill="#8f83ab"/>
+        <rect x="62" y="244" width="160" height="6" rx="3" fill="#8f83ab"/>
+        <circle cx="360" cy="200" r="8" fill="#ff7a59"/>
+        <circle cx="386" cy="222" r="5" fill="#58c2b3"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="wrap layout">
+<main>
+
+  <!-- 01 领域概览 -->
+  <section id="overview">
+    <div class="sec-head"><h2>领域概览：资源导航站做什么</h2><a href="/#guide">使用指南 →</a></div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>索引型站点的三层结构</h3>
+        <p>频道层决定条目的归类方式，条目层记录编号、标题、标签与入库时间，详情层只描述可获取路径。三层互相引用，任一层的改动都能在其余两层查到痕迹。2026-10-28 起，图集频道在条目层增加“来源标注”字段，详情页对应新增一行说明。</p>
+        <div class="tags"><span class="tag">条目编号</span><span class="tag">来源标注</span><span class="tag warm">频道层</span></div>
+      </div>
+      <div class="card">
+        <h3>与下载站、论坛的区别</h3>
+        <p>下载站以文件托管为核心，论坛以讨论帖为核心。索引站的核心是记录与排序规则：同一条目在不同频道是否重复收录、标签冲突时以哪条为准、更新时间是抓取时间还是人工录入时间，都需要写进规则。规则不清楚，条目的可复核性就下降。</p>
+        <div class="tags"><span class="tag">排序规则</span><span class="tag">标签冲突</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 精选内容推荐 -->
+  <section id="featured">
+    <div class="sec-head"><h2>精选条目推荐</h2><a href="/#rank">看完整榜单 →</a></div>
+    <div class="grid-3">
+      <article class="card">
+        <h3><a href="/#updates">《旧城档案》纪录片合集</a></h3>
+        <p>12 集，2025 年制作，影视频道条目 S-2041。标签页记录了每集的原始播出日期，第 7 集与第 9 集顺序在重排时调换过，条目注释里保留了旧序。</p>
+        <div class="meta"><span>影视</span><span>2026-11-06 入库</span></div>
+      </article>
+      <article class="card">
+        <h3><a href="/#channels">电子档案整理模板 v3.2</a></h3>
+        <p>文档频道 D-1187，含目录树、命名规范与字段说明三张表。10-30 版把“版本”字段从文本改为枚举值，旧数据需要手动映射，模板内附映射表。</p>
+        <div class="meta"><span>文档</span><span>2026-10-30 更新</span></div>
+      </article>
+      <article class="card">
+        <h3><a href="/#channels">城市夜景图集 · 秋末</a></h3>
+        <p>图集频道 P-0633，共 84 张，标注拍摄地与镜头参数。其中 6 张为同一机位不同时间，条目页给出时间序列对照，方便判断光线变化。</p>
+        <div class="meta"><span>图集</span><span>2026-11-07 入库</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 03 最新更新 -->
+  <section id="updates">
+    <div class="sec-head"><h2>最新更新记录</h2><a href="/#timeline">按日时间线 →</a></div>
+    <ul class="tight">
+      <li><span class="no">S-2068</span><span class="t"><a href="/#channels">城市观察短片第 4 期</a>，影视频道，补充字幕轨说明</span><time>11-08 09:20</time></li>
+      <li><span class="no">P-0640</span><span class="t"><a href="/#channels">夜间街景图集（共 52 张）</a>，图集频道，新增来源标注</span><time>11-08 08:45</time></li>
+      <li><span class="no">D-1204</span><span class="t"><a href="/#channels">字段命名词典 2026 修订版</a>，文档频道，修正 3 处示例</span><time>11-07 17:10</time></li>
+      <li><span class="no">M-0412</span><span class="t"><a href="/#channels">室内乐现场录音合辑</a>，音乐频道，更新曲目序号</span><time>11-07 11:32</time></li>
+      <li><span class="no">T-0095</span><span class="t"><a href="/#channels">标签冲突处理示例</a>，教程频道，新增两个反例</span><time>11-06 15:04</time></li>
+    </ul>
+  </section>
+
+  <!-- 04 分类入口 -->
+  <section id="channels">
+    <div class="sec-head"><h2>频道分类入口</h2><a href="/#cloud">全部标签 →</a></div>
+    <div class="index-grid">
+      <a class="index-item" href="/#featured"><b>影视条目</b><small>纪录片 / 短片 / 合集，按年份筛选</small></a>
+      <a class="index-item" href="/#featured"><b>音乐条目</b><small>现场录音 / 合辑，附曲目序号</small></a>
+      <a class="index-item" href="/#featured"><b>图集条目</b><small>拍摄地与镜头参数标注</small></a>
+      <a class="index-item" href="/#featured"><b>文档条目</b><small>模板 / 词典 / 字段说明</small></a>
+      <a class="index-item" href="/#guide"><b>软件条目</b><small>版本差异与安装说明</small></a>
+      <a class="index-item" href="/#guide"><b>教程条目</b><small>操作步骤与常见错误</small></a>
+      <a class="index-item" href="/#rank"><b>榜单条目</b><small>按周更新，列出变动原因</small></a>
+      <a class="index-item" href="/#faq"><b>话题条目</b><small>争议内容分层标注</small></a>
+    </div>
+  </section>
+
+  <!-- 05 深度解析 -->
+  <section id="deep">
+    <div class="sec-head"><h2>深度解析：索引站的可信度怎么拆</h2><a href="/#comments">看读者反馈 →</a></div>
+    <div class="deep">
+      <h3>判断一：条目编号比标题更能代表一条记录</h3>
+      <p>标题会被修改，编号不会。图集频道 P-0633 在 10-12 首次入库时标题为“城市夜景 84 张”，11-07 改为“城市夜景图集 · 秋末”，编号未变。检索时用编号能稳定命中，用旧标题则可能落空。影视频道 S-2041 也出现过同类情况：重排后标题加了集数区间，编号仍是 S-2041。</p>
+
+      <h3>判断二：更新时间分三档，混用会误判新鲜度</h3>
+      <p>当前记录区分三个时间字段：抓取时间、录入时间、人工复核时间。文档频道 D-1187 的抓取时间是 10-30 06:12，录入时间是 10-30 09:40，人工复核时间是 11-01 14:20。列表页默认展示录入时间，详情页三个都列。若只看列表页，会以为 10-30 之后没有变化，实际上 11-01 有一次字段修正。</p>
+
+      <h3>判断三：标签冲突以“来源优先”而非“时间优先”裁决</h3>
+      <p>10-20 之前，同一标签由后入库者覆盖；10-20 之后改为来源优先：一手来源覆盖转述来源，同级别才比较时间。教程频道 T-0095 记录了这次规则变化前后的两个例子——同一个“现场录音”标签，旧规则下被转述条目覆盖，新规则下回到一手条目。规则说明里保留了旧例，便于对比。</p>
+
+      <div class="quote">
+        深度解析里的每一条判断都可以拿编号去频道页复核：编号、三个时间字段、来源级别三样对上，判断才成立。
+        <span class="who">依据：频道页条目注释与 10-20 规则变更说明</span>
+      </div>
+
+      <h3>可核对的结构：一条记录该有哪几项</h3>
+      <ul>
+        <li>编号：频道前缀 + 四位序号，前缀固定不变。</li>
+        <li>标题：允许修改，修改记录留在注释里，注明旧标题与日期。</li>
+        <li>来源级别：一手 / 转述 / 推测，三级，推测级不进榜单。</li>
+        <li>时间：抓取、录入、复核三项，缺项要标注“未复核”。</li>
+        <li>关联条目：最多 3 条，用于跨频道引用，不重复正文。</li>
+      </ul>
+      <p>这五项里任何一项缺失，条目仍然可读，但不进入周榜。11-08 的周榜共 20 条，全部五项齐全；被排除的 7 条里，5 条缺复核时间，2 条来源级别为推测。</p>
+    </div>
+  </section>
+
+  <!-- 06 体验指南 -->
+  <section id="guide">
+    <div class="sec-head"><h2>体验指南：五步把一个条目查清楚</h2><a href="/#faq">看常见问题 →</a></div>
+    <ol class="steps">
+      <li><b>先定频道。</b>影视、音乐、图集、文档、软件五类前缀分别是 S、M、P、D、A。不知道归哪类，从标签云反查，标签页会标出所属频道。</li>
+      <li><b>用编号检索。</b>搜索框支持编号前缀匹配，输入“P-06”会列出该段全部图集条目，配合时间列快速定位。</li>
+      <li><b>看三个时间。</b>列表页的录入时间只用于排序，新鲜度判断以详情页的复核时间为准，缺复核时间会在条目顶标注。</li>
+      <li><b>核对来源级别。</b>转述级条目会给出原始条目编号，点过去比对；推测级条目带灰色标记，不进榜单与精选。</li>
+      <li><b>记下关联条目。</b>跨频道的关联最多 3 条，看完主条目再顺着关联看一条，通常能补上标题里没写清的部分。</li>
+    </ol>
+  </section>
+
+  <!-- 07 对照面板 -->
+  <section id="compare">
+    <div class="sec-head"><h2>新旧规则对照</h2></div>
+    <div class="compare">
+      <div>
+        <h4>10-20 之前的规则</h4>
+        <ul>
+          <li>标签冲突：后入库覆盖先入库</li>
+          <li>榜单入选：按浏览量排序，不看来源级别</li>
+          <li>更新时间：只有抓取时间一个字段</li>
+          <li>标题修改：直接覆盖，不留旧值</li>
+        </ul>
+      </div>
+      <div>
+        <h4>10-20 之后的规则</h4>
+        <ul>
+          <li>标签冲突：来源优先，同级比时间</li>
+          <li>榜单入选：五项齐全且非推测级</li>
+          <li>更新时间：抓取、录入、复核三项</li>
+          <li>标题修改：保留旧标题与修改日期</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 FAQ -->
+  <section id="faq">
+    <div class="sec-head"><h2>常见问题</h2></div>
+    <details class="faq" open>
+      <summary>频道导航为什么按内容类型分，而不是按更新时间分？</summary>
+      <div class="ans">按时间排序适合“看最新”，不适合“找某一类”。站内条目跨五类，图集与文档的更新节奏差异明显：图集 11 月前 8 天入库 214 条，文档同期 38 条。混在一条时间流里，低频类目会被淹没，所以一级按类型、二级才按时间与热度。</div>
+    </details>
+    <details class="faq">
+      <summary>条目编号会重复使用吗？</summary>
+      <div class="ans">不会。编号采用频道前缀加四位递增序号，删除的条目保留编号并标记“已下架”，不回收。S-2041 之后即使有影视条目下架，新条目也从 S-2069 起编。</div>
+    </details>
+    <details class="faq">
+      <summary>为什么有的条目没有复核时间？</summary>
+      <div class="ans">复核是人工环节，每日额度有限，优先处理进入榜单和精选的条目。11-08 在库 1,284 条，已复核 1,037 条，未复核 247 条，未复核条目在列表页带“待复核”小标，且不进周榜。</div>
+    </details>
+    <details class="faq">
+      <summary>来源级别怎么判？</summary>
+      <div class="ans">能追到原始发布方的记为一手；只见到二次整理或转载的记为转述，并注明转自哪条；两者都查不到、仅有描述的记为推测。推测级不进榜单，也不出现在精选推荐里。</div>
+    </details>
+    <details class="faq">
+      <summary>搜索没有结果是什么原因？</summary>
+      <div class="ans">本地索引只匹配标题、标签和编号三类字段，不索引正文。用导演名、曲目名搜索可能落空，改用条目编号或频道标签更稳。无结果时会提示相邻频道，便于换词。</div>
+    </details>
+  </section>
+
+  <!-- 09 用户评论 -->
+  <section id="comments">
+    <div class="sec-head"><h2>读者评论</h2><a href="/#feedback">提交反馈 →</a></div>
+    <div class="cm">
+      <div class="cm-item">
+        <div class="who"><span class="avatar" style="background:#ff7a59">林</span><span class="name">林野</span><span class="when">11-08</span></div>
+        <p>P-0633 那组夜景的时间序列做得不错，同一机位六张，对比光线变化很直观。</p>
+        <span class="ref">指向：图集 P-0633</span>
+      </div>
+      <div class="cm-item">
+        <div class="who"><span class="avatar" style="background:#f2c14e">周</span><span class="name">周叙</span><span class="when">11-07</span></div>
+        <p>列表页只给录入时间，详情页才有复核时间，这个设计有点绕。查旧条目时容易把录入当成最新。</p>
+        <span class="ref">指向：时间字段设计</span>
+      </div>
+      <div class="cm-item">
+        <div class="who"><span class="avatar" style="background:#58c2b3">何</span><span class="name">何栎</span><span class="when">11-07</span></div>
+        <p>D-1187 的版本字段改成枚举值以后，旧模板不能直接套用，映射表在附件里，但入口藏得深。</p>
+        <span class="ref">指向：文档 D-1187</span>
+      </div>
+      <div class="cm-item">
+        <div class="who"><span class="avatar" style="background:#8b7cf6">沈</span><span class="name">沈迟</span><span class="when">11-06</span></div>
+        <p>标签冲突改成来源优先后，确实少了很多反复覆盖的情况，T-0095 那两个反例举得清楚。</p>
+        <span class="ref">指向：教程 T-0095</span>
+      </div>
+      <div class="cm-item">
+        <div class="who"><span class="avatar" style="background:#ff7a59">陆</span><span class="name">陆听</span><span class="when">11-05</span></div>
+        <p>M-0412 曲目序号重排后，第 9 首到第 11 首的顺序和录音现场不一致，条目注释里没写原因。</p>
+        <span class="ref">指向：音乐 M-0412</span>
+      </div>
+      <div class="cm-item">
+        <div class="who"><span class="avatar" style="background:#f2c14e">田</span><span class="name">田沐</span><span class="when">11-04</span></div>
+        <p>周榜 20 条门槛设成五项齐全，思路可以理解，不过对刚入库还没复核的条目不太友好，头两天很难进榜。</p>
+        <span class="ref">指向：榜单规则</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 相关资讯 -->
+  <section id="news">
+    <div class="sec-head"><h2>相关资讯</h2></div>
+    <div class="grid-3">
+      <article class="card">
+        <h3>图集频道 11 月入库节奏</h3>
+        <p>11-01 至 11-08 共入库 214 条，日均 26.75 条，高于 10 月的日均 19 条。增量集中在城市夜景与旧建筑两类标签。</p>
+        <div class="meta"><span>11-08</span></div>
+      </article>
+      <article class="card">
+        <h3>字段命名词典修订</h3>
+        <p>D-1204 修正 3 处示例，统一“标注”与“注释”两个易混字段的区别：前者写来源，后者写修改记录。</p>
+        <div class="meta"><span>11-07</span></div>
+      </article>
+      <article class="card">
+        <h3>周榜规则调整后的第一期</h3>
+        <p>10-20 规则生效后的首期周榜在 10-26 发布，20 条中 7 条为新入库条目，13 条为旧条目重新复核后入选。</p>
+        <div class="meta"><span>10-26</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 11 相关推荐 -->
+  <section id="related">
+    <div class="sec-head"><h2>相关推荐标签</h2></div>
+    <div class="cloud" id="cloud">
+      <a href="/#channels">城市夜景图集</a>
+      <a href="/#channels">旧城档案纪录片</a>
+      <a href="/#guide">字段命名词典</a>
+      <a href="/#guide">标签冲突处理示例</a>
+      <a href="/#updates">室内乐现场录音</a>
+      <a href="/#rank">周榜入选门槛</a>
+      <a href="/#deep">来源级别判定</a>
+      <a href="/#faq">待复核条目说明</a>
+      <a href="/#channels">电子档案整理模板</a>
+      <a href="/#news">图集入库节奏</a>
+    </div>
+  </section>
+
+  <!-- 12 补充板块：时间线 -->
+  <section id="timeline">
+    <div class="sec-head"><h2>规则与内容时间线</h2></div>
+    <div class="timeline">
+      <div class="tl"><time>2026-10-20</time>标签冲突裁决改为来源优先，T-0095 新增两个对照例。</div>
+      <div class="tl"><time>2026-10-26</time>新规则下首期周榜发布，20 条入选，7 条为当周入库。</div>
+      <div class="tl"><time>2026-10-30</time>D-1187 发布 v3.2，版本字段改为枚举值并附映射表。</div>
+      <div class="tl"><time>2026-11-01</time>D-1187 完成人工复核，修正 3 处字段示例。</div>
+      <div class="tl"><time>2026-11-06</time>图集 P-0633 标题更新，旧标题保留在注释中。</div>
+      <div class="tl"><time>2026-11-08</time>图集频道单日入库 46 条，创 11 月单日新高。</div>
+    </div>
+  </section>
+
+  <!-- 13 反馈互动 -->
+  <section id="feedback">
+    <div class="sec-head"><h2>参与条目纠错</h2></div>
+    <div class="card">
+      <h3>发现编号、时间或来源级别对不上？</h3>
+      <p>在条目详情页记下编号与三项时间，连同你看到的原始出处写入反馈说明。纠错请求按频道排队，图集与文档两个频道的处理更快，影视与音乐因转述来源多，核对比对耗时更长。11-08 当周已处理纠错 23 条，其中 9 条修改了来源级别，14 条只补了复核时间。</p>
+      <div class="tags"><span class="tag warm">编号纠错</span><span class="tag">时间补录</span><span class="tag">来源比对</span></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 侧栏 -->
+<aside aria-label="侧栏导航与榜单">
+  <div class="side-box">
+    <h3>本页导航</h3>
+    <nav id="sideNav">
+      <a href="/#overview">领域概览</a>
+      <a href="/#featured">精选条目推荐</a>
+      <a href="/#updates">最新更新记录</a>
+      <a href="/#channels">频道分类入口</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#guide">体验指南</a>
+      <a href="/#compare">新旧规则对照</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">读者评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#related">相关推荐标签</a>
+      <a href="/#timeline">规则与内容时间线</a>
+      <a href="/#feedback">参与条目纠错</a>
+    </nav>
+  </div>
+  <div class="side-box">
+    <h3>本周条目热度</h3>
+    <ul class="rank">
+      <li><span class="n">1</span><span>P-0633 城市夜景图集 · 秋末</span></li>
+      <li><span class="n">2</span><span>S-2041 旧城档案纪录片合集</span></li>
+      <li><span class="n">3</span><span>D-1187 电子档案整理模板 v3.2</span></li>
+      <li><span class="n">4</span><span>D-1204 字段命名词典 2026 修订版</span></li>
+      <li><span class="n">5</span><span>M-0412 室内乐现场录音合辑</span></li>
+      <li><span class="n">6</span><span>T-0095 标签冲突处理示例</span></li>
+    </ul>
+  </div>
+</aside>
+</div>
+
+<!-- 页尾 -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="fbrand">
+          <svg viewBox="0 0 64 64" width="30" height="30" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#241a3b"/>
+            <circle cx="22" cy="23" r="8" fill="#ff7a59"/>
+            <circle cx="43" cy="25" r="6" fill="#f2c14e"/>
+            <circle cx="33" cy="43" r="8" fill="#58c2b3"/>
+          </svg>
+          <span class="bt">九色91网官网</span>
+        </div>
+        <p>把跨频道的资源条目整理成可检索、可复核的记录，编号、时间与来源级别三项对齐，查一条就查到底。</p>
+        <p><small>示例数据说明：站内条目编号、条目名称、入库与复核时间为演示用示例，不对应真实文件或真实站点运营数据。</small></p>
+      </div>
+      <div>
+        <h4>频道入口</h4>
+        <ul>
+          <li><a href="/#channels">影视条目</a></li>
+          <li><a href="/#channels">音乐条目</a></li>
+          <li><a href="/#channels">图集条目</a></li>
+          <li><a href="/#channels">文档条目</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>使用与规则</h4>
+        <ul>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#compare">新旧规则对照</a></li>
+          <li><a href="/#deep">可信度拆解</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>互动</h4>
+        <ul>
+          <li><a href="/#comments">读者评论</a></li>
+          <li><a href="/#feedback">条目纠错</a></li>
+          <li><a href="/#rank">本周热度榜</a></li>
+          <li><a href="/#timeline">规则时间线</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 九色91网官网 · 示例站点，内容为演示数据</span>
+      <span>页脚更新时间 2026-11-08，对应“最新更新记录”与“时间线”两条入库与复核项</span>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var menuBtn=document.getElementById('menuBtn');
+  var nav=document.getElementById('themeNav');
+  menuBtn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.tagName==='A' && window.innerWidth<=680){
+      nav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded','false');
+    }
+  });
+
+  var input=document.getElementById('searchInput');
+  var msg=document.getElementById('searchMsg');
+  var form=document.getElementById('searchForm');
+  var index=[];
+  document.querySelectorAll('main h3 a, .tight .t a, .cloud a, aside .rank span').forEach(function(el){
+    index.push({text:(el.textContent||'').trim(), el:el});
+  });
+  function doSearch(){
+    var q=(input.value||'').trim().toLowerCase();
+    if(!q){ msg.style.display='none'; return; }
+    var hit=null;
+    for(var i=0;i<index.length;i++){
+      if(index[i].text.toLowerCase().indexOf(q)>-1){ hit=index[i]; break; }
+    }
+    msg.style.display='block';
+    if(hit){
+      msg.textContent='找到匹配：'+hit.text+'（按 Enter 跳转）';
+      msg.dataset.hit=hit.text;
+      window.__hitEl=hit.el;
+    }else{
+      msg.textContent='本地索引中没有“'+q+'”。试试条目编号（如 P-06、D-1187）或频道标签：图集、文档、影视。';
+      window.__hitEl=null;
+    }
+  }
+  document.getElementById('searchBtn').addEventListener('click',doSearch);
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Enter'){
+      e.preventDefault();
+      doSearch();
+      if(window.__hitEl){
+        var t=window.__hitEl;
+        if(t.closest('aside')) t.click();
+        else t.scrollIntoView({behavior:'smooth',block:'center'});
+        t.focus && t.focus({preventScroll:true});
+      }
+    }
+  });
+  input.addEventListener('input',function(){ if(!input.value.trim()) msg.style.display='none'; });
+
+  var toTop=document.getElementById('toTop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>520) toTop.classList.add('show');
+    else toTop.classList.remove('show');
+  },{passive:true});
+  toTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  var sideLinks=Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+  var sections=sideLinks.map(function(a){
+    var id=a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  }).filter(Boolean);
+  function highlight(){
+    var pos=window.scrollY+140;
+    var current=-1;
+    sections.forEach(function(sec,i){ if(sec.offsetTop<=pos) current=i; });
+    sideLinks.forEach(function(a,i){
+      a.classList.toggle('active', i===current);
+    });
+  }
+  window.addEventListener('scroll',highlight,{passive:true});
+  highlight();
+})();
+</script>
+</body>
+  </html>
